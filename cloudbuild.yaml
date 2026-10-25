@@ -8,5 +8,15 @@ steps:
     entrypoint: "python"
     args: ["--version"]
   # Step 2: build docker image
+  # docker build -t imagename .
+  - name: "gcr.io/cloud-builders/docker"
+    id: "build"
+    # entrypoint: "docker"
+    # args: ["build", "-t", "sampleimage", "."]
+    args:
+      - "build"
+      - "-t"
+      - "sampleimage"
+      - "."
   # Step 3: Push image to artifact registry
   # Step 4: Deploy image to the VM
