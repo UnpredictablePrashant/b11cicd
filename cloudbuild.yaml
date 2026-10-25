@@ -2,9 +2,9 @@ options:
   logging: CLOUD_LOGGING_ONLY
 
 steps:
-  # step 1: check python
-  - name: "Python checker"
-    id: "check"
+  # Step 1: Check Python version
+  - name: "python:3.12-slim"
+    id: "Python-checker"
     entrypoint: "python"
     args: ["--version"]
   # Step 2: build docker image
